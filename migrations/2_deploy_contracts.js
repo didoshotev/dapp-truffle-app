@@ -1,11 +1,9 @@
-const Box = artifacts.require("Box");
-const Basic = artifacts.require("Basic");
-const HelloWorld = artifacts.require("HelloWorld");
-// const RoleToken = artifacts.require("RoleToken");
+const instances = require('../globals/contracts-instances.js')(artifacts);
+
 
 module.exports = function(deployer) {
     console.log("--------------Deploy 2nd step-------------------- \n");
-    deployer.deploy(Box);
-    deployer.deploy(Basic);
-    deployer.deploy(HelloWorld, "Hello World message");
+    deployer.deploy(instances.Box);
+    deployer.deploy(instances.Basic);
+    deployer.deploy(instances.HelloWorld, "Hello World message");
 };
